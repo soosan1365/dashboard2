@@ -15,6 +15,7 @@ import { SidebarTrigger } from "../ui/sidebar";
 import { menuItems } from "@/content/data";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import MenuPhone from "./MenuPhone";
 
 
 const Navbar = () => {
@@ -28,32 +29,35 @@ const Navbar = () => {
       <div className="flex justify-center items-center gap-2">
         <Image src={logo} className="rounded-4xl" alt="" width={20} height={20} />
         <h1 className="text-lg font-semibold">Talantium</h1>
-        <span className="md:hidden flex justify-center items-center"><SidebarTrigger className="md:hidden" />Menu</span></div>
+        <span className="md:hidden flex justify-center items-center"><SidebarTrigger className="md:hidden" />SidebarMenu</span>
+        </div>
       <div className="flex gap-5 justify-center items-center">
         {menuItems.map((item, index) => (
 
           <Link key={index} href={item.href} className={`hidden md:block
                  ${pathname == item.href ? "border-[1px] border-gray-400 py-1 px-2  rounded-4xl " : ""}`}>
-            <span className="relative text-gray-800">{item.lable}</span>
-            {
+           <p className="relative text-gray-800">{item.lable} {
               item.lable === "Massages" ? (
-                <span className="absolute top-6 bg-red-500 w-2 h-2 rounded-full"></span>) : ""
-            }
+                <span className="absolute   bg-red-500 w-2 h-2 rounded-full"></span>) : ""
+            }</p>
+           
           </Link>
 
         ))}
       </div>
       {/* right  */}
-      <div className=" flex justify-end  items-center gap-3  ">
+      <div className=" flex justify-center items-center gap-2">
+        
         <span className="border border-gray-100 rounded-4xl p-[9px]"><Settings className="w-5 h-5" /></span>
-        <span className="border rounded-full p-2 relative  ">
+        <div className="border rounded-full p-2 relative  ">
           <BellRing className="w-5 h-5 " />
           <span className="absolute rounded-full w-2 h-2 
            text-white flex justify-center items-center 
            top-0.5 right-1 text-sm bg-red-500"></span>
-        </span>
+        </div>
+
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger className="flex justify-center items-center gap-2">
             <Image src={selina} width={32} height={32} alt="" className=" rounded-full border-2   border-gray-300" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
@@ -73,11 +77,12 @@ const Navbar = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-
+        <MenuPhone /> 
+       </div>
 
       </div>
-    </div>
-  );
-};
+  
+  )
+}
 
 export default Navbar;
