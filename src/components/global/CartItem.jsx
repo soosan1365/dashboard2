@@ -29,9 +29,9 @@ const CartItem = ({price,title,company,country,date,workSchedule,workStyle,srche
    </div>
 
     <div className="flex gap-2 ">
-        <button className="border-2 border-black/12 py-1 px-3 rounded-full">{workSchedule}</button>
-        <button className="border-2 border-black/12 py-1 px-3 rounded-full">{workStyle}</button>
-        <button className="border-2 border-black/12 py-1 px-3 rounded-full">{experience}</button>
+        <button className="border-2 whitespace-nowrap border-black/12 py-1 px-3 rounded-full">{workSchedule}</button>
+        <button className="border-2 whitespace-nowrap border-black/12 py-1 px-3 rounded-full">{workStyle}</button>
+        <button className="border-2 whitespace-nowrap border-black/12 py-1 px-3 rounded-full">{experience}</button>
     </div>
   </CardContent>
   <CardFooter>
