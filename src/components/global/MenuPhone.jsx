@@ -28,7 +28,7 @@ const MenuPhone = () => {
                                 <Image src={logo} className="rounded-4xl" alt="" width={20} height={20} />
                                 <h1 className="text-lg font-semibold">Talantium</h1></div>
                         </SheetTitle>
-                        < SheetDescription>
+                        <div className="sheet-description">
                             <div className="flex flex-col gap-5 justify-center mt-10 ml-5  text-base font-semibold">
                                 {menuItems.map((item, index) => (
 
@@ -45,7 +45,7 @@ const MenuPhone = () => {
                                     </Link>
                                 ))}
                             </div>
-                        </SheetDescription>
+                        </div>
                     </SheetHeader>
                 </SheetContent>
             </Sheet>

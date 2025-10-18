@@ -25,24 +25,30 @@ const Navbar = () => {
     <div className="flex justify-between items-center sticky top-0 p-4 z-50 bg-purple-50
       text-gray-800 ">
 
-      {/*left search */}
-      <div className="flex justify-center items-center gap-2">
-        <Image src={logo} className="rounded-4xl" alt="" width={20} height={20} />
+      {/* left: logo/title */}
+      <div className="flex items-center gap-2">
+        <Image src={logo} className="rounded-4xl" alt="Talantium" width={28} height={28} />
         <h1 className="text-lg font-semibold">Talantium</h1>
-        <span className="md:hidden flex justify-center items-center"><SidebarTrigger className="md:hidden" />SidebarMenu</span>
+        {/* sidebar trigger for small screens */}
+        <div className="md:hidden">
+          <SidebarTrigger />
         </div>
-      <div className="flex gap-5 justify-center items-center">
+      </div>
+
+      {/* center: main nav links (hidden on small screens) */}
+      <div className="hidden md:flex flex-1 gap-5 justify-center items-center">
         {menuItems.map((item, index) => (
-
-          <Link key={index} href={item.href} className={`hidden md:block
-                 ${pathname == item.href ? "border-[1px] border-gray-400 py-1 px-2  rounded-4xl " : ""}`}>
-           <p className="relative text-gray-800">{item.lable} {
-              item.lable === "Massages" ? (
-                <span className="absolute   bg-red-500 w-2 h-2 rounded-full"></span>) : ""
-            }</p>
-           
+          <Link
+            key={index}
+            href={item.href}
+            className={`px-3 py-1 rounded-4xl text-gray-800 font-medium ${pathname == item.href ? "border-[1px] border-gray-400 bg-white" : "hover:bg-gray-100"}`}>
+            <span className="relative inline-block">
+              {item.lable}
+              {item.lable === "Massages" ? (
+                <span className="absolute -top-1 -right-2 bg-red-500 w-2 h-2 rounded-full" />
+              ) : null}
+            </span>
           </Link>
-
         ))}
       </div>
       {/* right  */}
@@ -77,7 +83,7 @@ const Navbar = () => {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
-        <MenuPhone /> 
+  <MenuPhone />
        </div>
 
       </div>
