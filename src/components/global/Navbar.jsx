@@ -41,7 +41,7 @@ const Navbar = () => {
           <Link
             key={index}
             href={item.href}
-            className={`px-3 py-1 rounded-4xl text-gray-800 font-medium ${pathname == item.href ? "border-[1px] border-gray-400 bg-white" : "hover:bg-gray-100"}`}>
+            className={`px-3 py-1 rounded-4xl text-gray-800 font-medium ${pathname == item.href ? "border-[1px] border-gray-400 " : "hover:bg-gray-100"}`}>
             <span className="relative inline-block">
               {item.lable}
               {item.lable === "Massages" ? (
