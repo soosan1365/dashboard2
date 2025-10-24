@@ -237,7 +237,7 @@ export default function JobGrid() {
   }, [q, activeFilters, headerState.appliedFilters]);
 
   return (
-    <div className="grid grid-cols-1 max-w-[85%]  mx-auto md:max-w-[100%] md:grid-cols-2 lg:grid-cols-3 gap-2 px-3 py-4">
+    <div className="grid grid-cols-1 max-w-[90%]  mx-auto md:max-w-[100%] md:grid-cols-2 lg:grid-cols-3 gap-2 px-3 py-4">
       {filtered.length === 0 ? (
         <div className="col-span-full text-center py-12 text-gray-500">No jobs found</div>
       ) : (
